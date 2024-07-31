@@ -31,6 +31,15 @@ namespace Agava.GameEvents
             request.EnsureStatusCode(onErrorCallback);
         }
 
+        public static async Task DeleteEvent(string eventId, Action<string> onErrorCallback = null)
+        {
+            using var request = UnityWebRequest.Post($"{_host}/api/GameEvent/delete/{eventId}", string.Empty, "application/json");
+            request.SetRequestHeader("ApiKey", _apiKey);
+            await request.SendWebRequest();
+
+            request.EnsureStatusCode(onErrorCallback);
+        }
+
         public static async Task StartEvent(string eventId, Action<string> onErrorCallback = null)
         {
             using var request = UnityWebRequest.Post($"{_host}/api/GameEvent/start/{eventId}", string.Empty, "application/json");

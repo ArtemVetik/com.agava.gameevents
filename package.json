@@ -1,6 +1,6 @@
 {
   "name": "com.agava.gameevents",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "Custom Game Events",
   "type": "library",
   "unity": "2022.3",
